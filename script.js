@@ -32,6 +32,8 @@ function getUserChoice() {
 
 //Create function playround
 function playRound(humanChoice, computerChoice) {
+    console.log("Human Choice " + humanChoice)
+    console.log("Computer Choice " + computerChoice)
     if(humanChoice === 'rock' && computerChoice === 'scissors') {
         console.log('You win! Rock beats Scissors')
         humanScore ++;
@@ -59,10 +61,32 @@ function playRound(humanChoice, computerChoice) {
         console.log('You lose! Rock beats Scissors')
         computerScore ++;
     }
-    else if(humanChoice === computerChoice) {
-        console.log("It's a draw!");
+
+    else if (humanChoice === computerChoice) {
+        console.log("Draw!");
     }
 }
 
-const comp_choice = computerChoice();
-const human_choice = humanChoice();
+//create a function named playGame
+function playGame() {
+    let playing = true;
+        while(playing) {
+            const comp_choice = getComputerChoice();
+            const human_choice = getUserChoice();
+
+            console.log(comp_choice);
+            console.log(human_choice);
+
+            playRound(human_choice, comp_choice);
+
+            if (humanScore === 3) {
+                console.log("You win!")
+                playing = false;
+            } else if(computerScore === 3) {
+                console.log("You lose!")
+                playing = false;
+            }
+        }
+    }
+
+playGame();
