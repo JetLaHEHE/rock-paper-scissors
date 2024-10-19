@@ -1,7 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
 
-
 function userClicked(event) {
     let target = event.target;
 
@@ -58,6 +57,10 @@ function playRound(humanChoice, computerChoice) {
 
     let para = document.createElement("p");
 
+    showResults.appendChild(para);
+
+    if(para.previousSibling != null)  para.previousSibling.remove();
+
     console.log("Human Choice " + humanChoice)
     console.log("Computer Choice " + computerChoice)
 
@@ -66,8 +69,6 @@ function playRound(humanChoice, computerChoice) {
 
         para.textContent = result;
 
-        showResults.appendChild(para);
-
         humanScore ++;
     }
     else if (humanChoice === 'paper' && computerChoice === 'rock') {
@@ -75,16 +76,12 @@ function playRound(humanChoice, computerChoice) {
 
         para.textContent = result;
 
-        showResults.appendChild(para);
-
         humanScore ++;
     }
     else if (humanChoice === 'scissors' && computerChoice === 'paper') {
         result = 'You win! Scissors beats Paper';
 
         para.textContent = result;
-
-        showResults.appendChild(para);
 
         humanScore ++;
     }
@@ -94,8 +91,6 @@ function playRound(humanChoice, computerChoice) {
 
         para.textContent = result;
 
-        showResults.appendChild(para);
-
         computerScore ++;
     }
 
@@ -103,8 +98,6 @@ function playRound(humanChoice, computerChoice) {
         result = 'You lose! Paper beats Rock';
 
         para.textContent = result;
-
-        showResults.appendChild(para);
 
         computerScore ++;
     }
@@ -114,17 +107,13 @@ function playRound(humanChoice, computerChoice) {
 
         para.textContent = result;
 
-        showResults.appendChild(para);
-
         computerScore ++;
     }
 
     else if (humanChoice === computerChoice) {
         result = "Draw!";
-        
-        para.textContent = result;
 
-        showResults.appendChild(para);
+        para.textContent = result;
     }
 }
 
