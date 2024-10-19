@@ -15,8 +15,8 @@ function userClicked(event) {
             playRound('paper', getComputerChoice());
             break;
         case 'scissor':
-            console.log('scissor');
-            playRound('scissor', getComputerChoice());
+            console.log('scissors');
+            playRound('scissors', getComputerChoice());
             break;
     }
 }
