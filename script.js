@@ -1,23 +1,30 @@
 let humanScore = 0;
 let computerScore = 0;
 
-const selection = document.querySelector("#selection");
 
-selection?.addEventListener('click', (event) => {
+function userClicked(event) {
     let target = event.target;
 
     switch(target.id) {
         case 'rock':
             console.log('rock');
+            playRound('rock', getComputerChoice());
             break;
         case 'paper':
             console.log('paper');
+            playRound('paper', getComputerChoice());
             break;
         case 'scissor':
             console.log('scissor');
+            playRound('scissor', getComputerChoice());
             break;
     }
-});
+}
+
+
+let showResults = document.querySelector("#showResults");
+
+let para = document.createElement("p");
 
 function getComputerChoice() {
     randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -107,4 +114,4 @@ function playGame() {
         }
     }
 
-playGame();
+// playGame();
