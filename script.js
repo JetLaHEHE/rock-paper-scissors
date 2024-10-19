@@ -1,6 +1,24 @@
 let humanScore = 0;
 let computerScore = 0;
 
+const selection = document.querySelector("#selection");
+
+selection?.addEventListener('click', (event) => {
+    let target = event.target;
+
+    switch(target.id) {
+        case 'rock':
+            console.log('rock');
+            break;
+        case 'paper':
+            console.log('paper');
+            break;
+        case 'scissor':
+            console.log('scissor');
+            break;
+    }
+});
+
 function getComputerChoice() {
     randomNumber = Math.floor(Math.random() * 3) + 1;
 
