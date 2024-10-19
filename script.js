@@ -120,11 +120,11 @@ function playRound(humanChoice, computerChoice) {
     }
 
     else if (humanChoice === computerChoice) {
+        result = "Draw!";
+        
         para.textContent = result;
 
         showResults.appendChild(para);
-
-        result = "Draw!";
     }
 }
 
