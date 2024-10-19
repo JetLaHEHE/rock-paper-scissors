@@ -21,11 +21,6 @@ function userClicked(event) {
     }
 }
 
-
-let showResults = document.querySelector("#showResults");
-
-let para = document.createElement("p");
-
 function getComputerChoice() {
     randomNumber = Math.floor(Math.random() * 3) + 1;
 
@@ -57,38 +52,79 @@ function getUserChoice() {
 
 //Create function playround
 function playRound(humanChoice, computerChoice) {
+    let result = '';
+
+    let showResults = document.querySelector("#showResults");
+
+    let para = document.createElement("p");
+
     console.log("Human Choice " + humanChoice)
     console.log("Computer Choice " + computerChoice)
+
     if(humanChoice === 'rock' && computerChoice === 'scissors') {
-        console.log('You win! Rock beats Scissors')
+        result = 'You win! Rock beats Scissors';
+
+        para.textContent = result;
+
+        showResults.appendChild(para);
+
         humanScore ++;
     }
     else if (humanChoice === 'paper' && computerChoice === 'rock') {
-        console.log('You win! Paper beats Rock')
+        result = 'You win! Paper beats Rock';
+
+        para.textContent = result;
+
+        showResults.appendChild(para);
+
         humanScore ++;
     }
     else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-        console.log('You win! Scissors beats Paper')
+        result = 'You win! Scissors beats Paper';
+
+        para.textContent = result;
+
+        showResults.appendChild(para);
+
         humanScore ++;
     }
 
     else if (humanChoice === 'paper' && computerChoice === 'scissors') {
-        console.log('You lose! Scissors beats Paper')
+        result = 'You lose! Scissors beats Paper';
+
+        para.textContent = result;
+
+        showResults.appendChild(para);
+
         computerScore ++;
     }
 
     else if (humanChoice === 'rock' && computerChoice === 'paper') {
-        console.log('You lose! Paper beats Rock')
+        result = 'You lose! Paper beats Rock';
+
+        para.textContent = result;
+
+        showResults.appendChild(para);
+
         computerScore ++;
     }
 
     else if (humanChoice === 'scissors' && computerChoice === 'rock') {
-        console.log('You lose! Rock beats Scissors')
+        result = 'You lose! Rock beats Scissors';
+
+        para.textContent = result;
+
+        showResults.appendChild(para);
+
         computerScore ++;
     }
 
     else if (humanChoice === computerChoice) {
-        console.log("Draw!");
+        para.textContent = result;
+
+        showResults.appendChild(para);
+
+        result = "Draw!";
     }
 }
 
